@@ -1,0 +1,28 @@
+{
+  "number": 10,
+  "symbol": "NFT",
+  "sellerFeeBasisPoints": 250,
+  "isMutable": true,
+  "isSequential": false,
+  "creators": [
+    {
+      "address": "62EZM3ph5ePXUjADNfLr9aDv41esgdAWNmVBV35hw8uF",
+      "share": 100
+    }
+  ],
+  "uploadMethod": "bundlr",
+  "awsConfig": null,
+  "nftStorageAuthToken": null,
+  "shdwStorageAccount": null,
+  "pinataConfig": null,
+  "hiddenSettings": null,
+  "guards": {
+    "default": {
+      "solPayment": {
+        "value": 0.01,
+        "destination": "6WT4xktDafDodcEHw1DfBtQzY5nvCE2TT9eHnj5PnFuv"
+      },
+      "mintLimit" : {"id":1, "limit":10}
+    }
+  }
+}

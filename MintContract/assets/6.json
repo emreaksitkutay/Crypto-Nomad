@@ -1,0 +1,29 @@
+{
+  "name": "NFT #7",
+  "symbol": "NFT",
+  "description": "Your example NFT.  Make it something beautiful.",
+  "seller_fee_basis_points": 250,
+  "image": "6.png",
+  "mint_id": "2aVq4aVuzDEECxrosuSrzV8atgdM7FfUAPwLoheScVLt",
+  "attributes": [
+      {
+          "trait_type": "Tier",
+          "value": "1",
+          "max_value": "3"
+      }
+    
+  ],
+  "collection": {
+    "name": "YourNFT Collection",
+    "family": "Example"
+  },
+  "properties": {
+      "files": [
+          {
+              "uri": "6.png",
+              "type": "image/png"
+          }
+      ],
+      "category": "html"
+  }
+}
