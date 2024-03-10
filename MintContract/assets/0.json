@@ -1,7 +1,7 @@
 {
-  "name": "NFT #1",
+  "name": "Istanbul",
   "symbol": "NFT",
-  "description": "Your example NFT.  Make it something beautiful.",
+  "description": "Your Souvenir NFT.",
   "seller_fee_basis_points": 250,
   "image": "0.png",
   "mint_id": "2aVq4aVuzDEECxrosuSrzV8atgdM7FfUAPwLoheScVLt",
@@ -14,7 +14,7 @@
     
   ],
   "collection": {
-      "name": "YourNFT Collection",
+      "name": "Crypto Nomad",
       "family": "Example"
   },
   "properties": {

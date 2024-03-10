@@ -1,7 +1,7 @@
 {
-  "name": "NFT #4",
+  "name": "Tokyo",
   "symbol": "NFT",
-  "description": "New York NFT.  Dreams are maded.",
+  "description": "Your Souvenir NFT.",
   "seller_fee_basis_points": 250,
   "image": "3.png",
   "mint_id": "2aVq4aVuzDEECxrosuSrzV8atgdM7FfUAPwLoheScVLt",
@@ -14,7 +14,7 @@
     
   ],
   "collection": {
-    "name": "Crypto Nomad Collection",
+    "name": "Crypto Nomad",
     "family": "Example"
   },
   "properties": {

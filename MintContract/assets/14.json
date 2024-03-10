@@ -1,9 +1,9 @@
 {
-  "name": "New York",
+  "name": "London",
   "symbol": "NFT",
   "description": "Your Souvenir NFT.",
   "seller_fee_basis_points": 250,
-  "image": "2.png",
+  "image": "14.png",
   "mint_id": "2aVq4aVuzDEECxrosuSrzV8atgdM7FfUAPwLoheScVLt",
   "attributes": [
       {
@@ -20,7 +20,7 @@
   "properties": {
       "files": [
           {
-              "uri": "2.png",
+              "uri": "14.png",
               "type": "image/png"
           }
       ],
