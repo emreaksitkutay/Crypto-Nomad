@@ -8,6 +8,7 @@ import { NETWORK } from "@utils/endpoints";
 
 import "../styles/globals.css";
 import "../styles/App.css";
+import '../styles/module.css'; // Ayrı bir CSS dosyasından stilleri import ediyoruz
 import { Toaster } from "react-hot-toast";
 
 const ReactUIWalletModalProviderDynamic = dynamic(
