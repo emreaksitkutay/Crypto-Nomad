@@ -6,7 +6,7 @@ For Main Page:
 - yarn dev
 
 For Mint Contract:
-Install Solana Tool Suite:
+Install Solana Tool Suite
 https://docs.solana.com/cli/install-solana-cli-tools#windows
 cmd /c "curl https://release.solana.com/v1.15.2/solana-install-init-x86_64-pc-windows-msvc.exe --output C:\solana-install-tmp\solana-install-init.exe --create-dirs"
 solana --version
