@@ -1,16 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import { useWallet } from "@solana/wallet-adapter-react";
-import { ItemList } from "@components/home/item-list";
-import { ItemData } from "@components/home/item";
-import { toast } from "react-hot-toast";
+import React, { useState, useEffect } from 'react'; // React ve hook'ları içe aktarır
+import { useWallet } from "@solana/wallet-adapter-react"; // Solana wallet adapter hook'unu içe aktarır
+import { ItemList } from "@components/home/item-list"; // NFT öğelerini listelemek için özel komponenti içe aktarır
+import { ItemData } from "@components/home/item"; // NFT öğe veri tipini tanımlayan komponenti içe aktarır
+import { toast } from "react-hot-toast"; // Kullanıcıya bildirim göstermek için kütüphaneyi içe aktarır
 
+// NFT içeriğini gösteren ana React komponenti
 export function HatiraNFTContent() {
-  const { publicKey } = useWallet();
-  const [data, setData] = useState<Array<ItemData>>([]);
-  const [loading, setLoading] = useState(false);
+  const { publicKey } = useWallet(); // Kullanıcının cüzdan adresini çeker
+  const [data, setData] = useState<Array<ItemData>>([]); // NFT verilerini saklamak için state
+  const [loading, setLoading] = useState(false); // Yüklenme durumunu kontrol etmek için state
 
-  const url = `https://mainnet.helius-rpc.com/?api-key=3cf5e69c-399d-4e51-bb7f-f3d8b3d662ed`
+  // Solana ağının API adresi
+  const url = `https://devnet.helius-rpc.com/?api-key=d145928e-576f-4ce7-9742-447246556b53`
 
+  // Cüzdan sahibinin NFT'lerini getiren fonksiyon
   const getAssetsByOwner = async () => {
     const response = await fetch(url, {
       method: 'POST',
@@ -22,29 +25,27 @@ export function HatiraNFTContent() {
         id: 'a',
         method: 'getAssetsByOwner',
         params: {
-          ownerAddress: publicKey,
-          page: 1, // Starts at 1
-          limit: 1000,
+          ownerAddress: publicKey, // Cüzdan adresi
+          page: 1, // Sayfa numarası, 1'den başlar
+          limit: 1000, // Bir seferde alınacak maksimum NFT sayısı
         },
       }),
     });
     const { result } = await response.json();
-    // console.log(result);
-    
-    // console.log(result.items.length);
-    
-
-    setData(result.items)
+    setData(result.items); // Alınan NFT'leri state'e ata
   };
 
-  React.useEffect(() => {
-    if (publicKey) getAssetsByOwner()
-  }, [publicKey])
+  // Cüzdan adresi değiştiğinde NFT'leri tekrar getir
+  useEffect(() => {
+    if (publicKey) getAssetsByOwner();
+  }, [publicKey]);
 
+  // Yüklenme durumunu göster
   if (loading) {
     return <p className="text-center p-4">Loading Your Souvenir NFTs...</p>;
   }
 
+  // Cüzdan bağlanmadıysa kullanıcıyı bilgilendir
   if (!publicKey) {
     return (
       <div className="text-center p-4">
@@ -53,9 +54,11 @@ export function HatiraNFTContent() {
     );
   }
 
+  // Cüzdan bağlıysa ve NFT'ler yüklendiyse, NFT listesini göster
+  // NFT'leri listelemek için ItemList komponentini kullan
   return (
     <div className="grid grid-cols-1">
-      <ItemList items={data} />
+      <ItemList items={data} /> 
     </div>
   );
 }
