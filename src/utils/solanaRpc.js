@@ -23,23 +23,22 @@ export const checkTransactionStatus = async (txId) => {
       const txStatus = result && result.result && result.result.value && result.result.value[0];
   
       if (!txStatus) {
-        return "Yardım Ödemesi Bulunamadı. Sosyal Yardımlar Genel Müdürlüğü veya Sosyal Yardımlaşma ve Dayanışma Vakfı ile iletişime geçiniz.";
+        return "Transaction Not Found. Please contact Crypto Nomad Support or check your transaction ID.";
       }
   
       if (txStatus.err) {
-        return "Yardım Ödemesi Transfer Edilemedi. Sosyal Yardımlar Genel Müdürlüğü veya Sosyal Yardımlaşma ve Dayanışma Vakfı ile iletişime geçiniz.";
+        return "Transaction Failed. Please contact Crypto Nomad Support for further assistance.";
       }
   
       if (txStatus.confirmations === null) {
-        return "Yardım Ödemesi Başarıyla Transfer Edildi.";
+        return "Transaction Successfully Completed.";
       } else if (txStatus.confirmations !== undefined) {
-        return "Yardım Ödemesi Başarıyla Transfer Edildi.";
+        return "Transaction Successfully Completed.";
       }
   
-      return "Yardım Ödemesi Transferi Beklemede. Ödemeler maksimum 3 iş günü içerisinde hesabınıza geçmektedir, eğer geçmezse Sosyal Yardımlar Genel Müdürlüğü veya Sosyal Yardımlaşma ve Dayanışma Vakfı ile iletişime geçiniz.";
+      return "Transaction Pending. Transactions usually complete within a few minutes. If not, please contact Crypto Nomad Support.";
     } catch (error) {
       console.error("Error fetching transaction status:", error);
-      return "Hatalı Giriş.";
+      return "Invalid Input.";
     }
   };
-  
